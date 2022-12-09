@@ -54,8 +54,9 @@ test-suite test
   hs-source-dirs:      test
   main-is:             Main.hs
   other-modules:
+                       Sandbox
                        Test.Consensus.Ledger.Mock
-
+                      
                        Test.ThreadNet.BFT
                        Test.ThreadNet.LeaderSchedule
                        Test.ThreadNet.PBFT

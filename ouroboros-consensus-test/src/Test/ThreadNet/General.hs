@@ -42,7 +42,7 @@ import           Data.Word (Word64)
 import           GHC.Stack (HasCallStack)
 import           Test.QuickCheck
 
-import           Control.Monad.IOSim (runSimOrThrow, setCurrentTime)
+import           Control.Monad.IOSim (runSimOrThrow, setCurrentTime, traceM)
 
 import qualified Ouroboros.Network.Mock.Chain as MockChain
 
@@ -229,6 +229,7 @@ runTestNetwork TestConfig
   }
     mkTestConfigMB
   = runSimOrThrow $ do
+    traceM "@@ Tracing"
     setCurrentTime dawnOfTime
     let TestConfigMB
           { nodeInfo

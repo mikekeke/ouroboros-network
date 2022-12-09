@@ -10,8 +10,14 @@ import qualified Test.ThreadNet.Praos (tests)
 import           Test.Util.TestEnv (defaultMainWithTestEnv,
                      defaultTestEnvConfig)
 
+import qualified Sandbox as SBox
+
 main :: IO ()
-main = defaultMainWithTestEnv defaultTestEnvConfig tests
+main = do
+  SBox.runSandbox
+  putStrLn "Some test"
+  
+  -- defaultMainWithTestEnv defaultTestEnvConfig tests
 
 tests :: TestTree
 tests =
